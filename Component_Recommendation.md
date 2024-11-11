@@ -3,22 +3,22 @@
 </p>
 
 # Lerna AI Recommendation Service
-Lerna Recommendation Service is an optional service on Lerna stack and is based on ActionML and Universal Recommender.
-It uses MongoDB to persist model configuration, Apache Spark to run data analysis and ElasticSearch to persist and retrieve model results.
+Lerna Recommendation Service is an optional service on Lerna stack that is based on [ActionML](https://github.com/actionml) and [Universal Recommender](https://github.com/actionml/universal-recommender).
+It uses MongoDB to persist model configurations and data, Apache Spark to run training tasks, and ElasticSearch to persist and retrieve the trained models.
 
 ![Lerna AI Recommendation Service](images/Recommendation.png)
 
-## Run
+## Execution
 
-Lerna Recommendation service infrastructure is  based on [Harness Docker Compose repo](https://github.com/actionml/harness-docker-compose) but used dedicated EC2 instances for Spark, ElasticSearch and Mongo.
+Lerna Recommendation service infrastructure is based on [Harness Docker Compose repo](https://github.com/actionml/harness-docker-compose) and it uses dedicated EC2 instances for Spark, ElasticSearch, and Mongo.
 
 ## Configuration
 
 ### Spark
 
-In order to install Spark we use the following steps (AWS, EC2, Ubuntu image)
+In order to install Spark, use the following steps (AWS, EC2, Ubuntu image):
 
-> 📝 we recommend to using a r4.4xlarge EC2 instance with 100GB disk to host Spark.
+> 📝 we recommend using an r4.4xlarge EC2 instance with 100GB disk to host Spark.
 
 Install JDK 11
 
@@ -46,7 +46,7 @@ cd spark-2.3.3-bin-hadoop2.7/conf
 cp spark-env.sh.template spark-env.sh 
 ```
 
-Update `spark-env.sh` by adding the following lines in the respective session
+Edit `spark-env.sh` by adding the following lines in the respective section
 ```shell
 SPARK_MASTER_HOST=0.0.0.0
 SPARK_MASTER_PORT=7077
@@ -68,7 +68,7 @@ sbin/start-slave.sh spark://localhost:7077
 
 ### MongoDB
 
-MongoDB should be run as docker container. We can start it with the following docker-compose script
+MongoDB should run as a docker container. You can start it with the following docker-compose script:
 
 ```yaml
 version: '3'
@@ -86,7 +86,7 @@ services:
       - ${MONGO_DATA}:/data/db
 ```
 
-We also need to set up the required environment variables. We can use the following `.env` file
+We also need to set up the required environment variables. You can use the following `.env` file:
 
 ```shell
 MONGO_LOGS=./docker-persistence/mongo/logs
@@ -95,7 +95,7 @@ MONGO_DATA=./docker-persistence/mongo/data/db
 
 ### ElasticSearch
 
-ElasticSearch should be run as docker container. We can start it with the following docker-compose script
+ElasticSearch should run as a docker container. You can start it with the following docker-compose script:
 
 ```yaml
 version: '3'
@@ -115,19 +115,18 @@ services:
       - ${ES_DATA}:/var/lib/elasticsearch/data
 ```
 
-We also need to set up the required environment variables. We can use the following `.env` file
+You also need to set up the required environment variables. You can use the following `.env` file:
 
 ```shell
 ES_JAVA_OPTS=-Xms512m -Xmx512m
 ES_DATA=./docker-persistence/es/data
 ```
 
-
 ### ActionML
 
-ActionML server contains the main harness app, an extra tool that provides CLI support to harness app and an optional instance of watchtower that provides "hot swap" support for development purposes. 
+ActionML server contains three components: a main harness app, a tool that provides CLI support to the harness app, and an optional instance of watchtower that provides "hot swap" support for developers. 
 
-ActionML should be run as docker container. We can start it with the following docker-compose script
+ActionML should run as a docker container. You can start it with the following docker-compose script:
 
 ```yaml
 version: '3'
@@ -176,22 +175,22 @@ services:
     command: --interval 3000
 ```
 
-We also need to set up the required environment variables. We can use the following `.env` file
+You also need to set up the required environment variables. You can use the following `.env` file:
 
 ```shell
 HARNESS_LOGS=./docker-persistence/harness/logs
 HARNESS_DATA=./docker-persistence/harness/data
 ```
 
-## Dependent
-
-- FL-API
-
-## Dependencies
+## Requires
 
 - MongoDB
 - Apache Spark
 - ElasticSearch
+
+## Required by
+
+- FL-API (optional)
 
 ## References
 
