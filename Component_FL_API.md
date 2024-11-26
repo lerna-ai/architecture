@@ -69,8 +69,9 @@ app.config.actionml.spark.esNode=change-me
 
 ## Required by
 
- - REST API on port 8080
- - External services (e.g. Lerna SDK, Dashboard) 
+ - Lerna SDK (REST API on port 8080)
+ - Dashboard (REST API on port 8080)
+ - External services
 
 ## References
 
