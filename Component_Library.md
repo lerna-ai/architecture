@@ -26,10 +26,10 @@ The Lerna SDK library can be downloaded via the maven repository. For usage plea
 
 ## References
 
-[1] [Lerna multiplatform SDK](https://github.com/lerna-ai/kmm-sdk)
+[1] [Lerna multiplatform SDK](https://github.com/lerna-ai/lerna-sdk)
 
-[2] [Lerna multiplatform SDK Readme File](https://github.com/lerna-ai/kmm-sdk/blob/master/README.md)
+[2] [Lerna multiplatform SDK Readme File](https://github.com/lerna-ai/lerna-sdk/blob/master/README.md)
 
-[3] [Kotlin DNN](https://github.com/lerna-ai/KotlinDNN)
+[3] [Kotlin DNN](https://github.com/lerna-ai/KMM-DNN)
 
-[4] [Lerna multiplatform SDK Usage File](https://github.com/lerna-ai/kmm-sdk/blob/master/USAGE.md)
+[4] [Lerna multiplatform SDK Usage File](https://github.com/lerna-ai/lerna-sdk/blob/master/USAGE.md)
