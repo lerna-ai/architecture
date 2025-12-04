@@ -33,8 +33,8 @@ N/A
 
 ## References
 
-[1] [MPC Repository](https://github.com/lerna-ai/mpc)
+[1] [MPC Repository](https://github.com/lerna-ai/mpc-dp-server)
 
-[2] [MPC Readme File](https://github.com/lerna-ai/mpc/blob/master/README.md)
+[2] [MPC Readme File](https://github.com/lerna-ai/mpc-dp-server/blob/master/README.md)
 
 [3] [Lerna Keys Readme File](https://github.com/lerna-ai/infra/blob/master/LernaKeys/README.md)
