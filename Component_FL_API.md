@@ -75,6 +75,6 @@ app.config.actionml.spark.esNode=change-me
 
 ## References
 
-[FL-API Repository](https://github.com/lerna-ai/fl-api)
+[FL-API Repository](https://github.com/lerna-ai/lerna-fl-server)
 
-[FL-API Readme File](https://github.com/lerna-ai/fl-api/blob/master/README.md)
+[FL-API Readme File](https://github.com/lerna-ai/lerna-fl-server/blob/master/README.md)
